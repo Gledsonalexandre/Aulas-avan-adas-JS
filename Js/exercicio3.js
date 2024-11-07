@@ -7,7 +7,7 @@ for(tentativas = 0; tentativas < 3; tentativas++){
      document.write("Nota válida " + nota)
      break
 }else{
-  alert("Nota inválida! Digite sua nota entre 0 e 10.")
+  alert("Nota inválida! Digite sua nota de 0 e 10.")
 }
  }
 if (nota < 0 || nota > 10 || isNaN(nota)) {
