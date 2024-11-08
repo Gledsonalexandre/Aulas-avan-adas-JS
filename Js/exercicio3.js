@@ -1,4 +1,4 @@
-1- Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido.
+//1- Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o valor seja inválido e continue pedindo até que o usuário informe um valor válido.
 
 for(tentativas = 0; tentativas < 3; tentativas++){
   var nota = parseFloat(prompt("Digite sua nota de 0 a 10"))
@@ -14,33 +14,34 @@ if (nota < 0 || nota > 10 || isNaN(nota)) {
     alert("Você excedeu o número de tentativas.");
 }
 
-2- Crie um loop que imprima todos os números de 1 a 100.
+//2- Crie um loop que imprima todos os números de 1 a 100.
 
-for(i=0; i < 101; i++){
-  document.write(i + "<br>")
+var numeros = "";
+for (var i = 1; i <= 100; i++) {
+  numeros += i;
+  if (i !== 100) {
+    numeros += ", ";
+  }
 }
+document.write(numeros);
 
+//3- Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.
 
-
-3- Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.
-
-for(i=0; i < 5; i++){
+for(i=0; i < 3; i++){
   var nome = String(prompt("Olá, qual o seu nome?"))
   var senha = parseInt(prompt("Seja bem-vindo(a) " + nome + ", agora digite a sua senha de três números."))
   if(senha === 123){
    alert("Senha correta. Acesso Permitido!")
     break
   }else{
-    alert("Senha incorreta. tente outra vez!")
+    alert("Senha incorreta. tente novamente !")
   }
 }
- if (i === 5) {
+ if (senha !== 123) {
   alert("Excedeu o limite de tentativas.");
 }
 
-
-
-4- Faça um programa que leia e valide as seguintes informações:
+//4- Faça um programa que leia e valide as seguintes informações:
    Nome: maior que 3 caracteres;
    Idade: entre 0 e 150;
    Salário: maior que zero;
@@ -49,7 +50,7 @@ for(i=0; i < 5; i++){
    Dica: se sua variável é texto, o tamanho dela está armazenado em: texto.length
 
 var nome = String(prompt("Olá, qual o seu nome?"))
-for(i = 0; i < 5; i++){
+for(i = 0; i < 3; i++){
 var idade = parseInt(prompt("Digite a sua idade."))
 if(idade >= 0 && idade <= 150){
 var salario = parseFloat(prompt("Digite o valor do seu salário."))
