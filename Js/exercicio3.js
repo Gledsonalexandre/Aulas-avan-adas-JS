@@ -71,10 +71,10 @@ if(i == 5){
 }
 
 
-5- Supondo que a população de um país A seja de 80.000 habitantes com uma taxa anual de crescimento de 3% e que a população de B seja de 200.000 habitantes com uma taxa de crescimento de 1,5%. 
+//5- Supondo que a população de um país A seja de 80.000 habitantes com uma taxa anual de crescimento de 3% e que a população de B seja de 200.000 habitantes com uma taxa de crescimento de 1,5%. 
    faça um programa que calcule o número de anos necessários para que a população do país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
 
-var paisA = 80.000
+  var paisA = 80.000
 var txCrescA = 0.03
 var paisB = 200.000
 var txCrescB = 0.015
@@ -84,21 +84,120 @@ while(paisA < paisB) {
   paisB += paisB * txCrescB;
   anos++;
 }
-document.write("O número de anos necessários para que a população de A ultrapasse ou iguale a população de B é de:", anos + " anos.");
+document.write(" Número de anos necessários para  a população do pais A ultrapasse ou iguale a população de B é de:", anos + " anos.");
 
 
-6- Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
-
-var paisA = parseFloat(prompt("Informe a quantidade de habitantes do país A."))
-var txCrescA = parseFloat(prompt("Informe a taxa de crescimento anual dos habitantes do país A."))
-var paisB = parseFloat(prompt("Informe a quantidade de habitantes do país B."))
-var txCrescB = parseFloat(prompt("Informe a taxa de crescimento anual dos habitantes do país B."))
+//6- Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
+var paisA = parseFloat(prompt("Digite a quantidade de habitantes do país A."))
+var txCrescA = parseFloat(prompt("digite a taxa de crescimento anual dos habitantes do país A."))
+var paisB = parseFloat(prompt("Digite a quantidade de habitantes do país B."))
+var txCrescB = parseFloat(prompt("Digite a taxa de crescimento anual dos habitantes do país B."))
 var anos = 0
 while(paisA < paisB) {
   paisA += paisA * txCrescA;
   paisB += paisB * txCrescB;
   anos++;
 }
-document.write("O número de anos necessários para que a população de A ultrapasse ou iguale a população de B é de: ", anos + " anos.");
+document.write("Número de anos para que a população de A ultrapasse ou iguale a população de B é de: ", anos + " anos.");
 
+//7 Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os números um ao lado do outro.
 
+for (let i = 1; i <= 20; i++) {
+  document.write(i);
+}
+//8  Faça um programa que leia 5 números e informe o maior número.
+
+  function encontrarMaiorNumero() {
+  var maiorNumero = Number.MIN_VALUE; //
+  for (var i = 0; i < 5; i++) {
+    const numero = parseFloat(prompt("Digite o " + (i + 1) + "º número:"));
+    if (numero > maiorNumero) {
+      maiorNumero = numero;
+    }
+  }
+
+  document.write("O número maior é:", maiorNumero);
+}
+encontrarMaiorNumero();
+
+//9 Faça um programa que leia 5 números e informe a soma e a média dos números.
+  function calcularSomaEMedia() 
+{
+  var soma = 0; 
+  for (var i = 0; i < 5; i++) {
+    const numero = parseFloat(prompt("Digite o " + (i + 1) + "º número:"));
+    soma += numero; 
+  }
+  const media = soma / 5; 
+  document.write("A soma dos números é:", soma);
+  Document.write("A média dos números é:", media);
+}
+calcularSomaEMedia();
+
+//10 Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
+var i = 1;
+while (i <= 50) {
+  if (i % 2 !== 0) {
+    document.write(i);
+  }
+  i++;
+}
+
+//11 Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
+  function gerarNumerosEntre(inicio, fim) {
+  var numeros = [];
+  for (var i = inicio; i <= fim; i++) {
+    numeros.push(i);
+  }
+  return numeros.join(', ');
+}
+const numeroInicial = parseInt(prompt("Digite o número inicial:"));
+const numeroFinal = parseInt(prompt("Digite o número final:"));
+
+const   
+ resultado = gerarNumerosEntre(numeroInicial, numeroFinal);
+document.write(resultado);
+
+//12 Altere o programa anterior para mostrar no final a soma dos números.
+  function gerarNumerosEntre(inicio, fim) {
+  var numeros = [];
+  var soma = 0; 
+  for (var i = inicio; i <= fim; i++) {
+    numeros.push(i);
+    soma += i; 
+  }
+  return "Números: " + numeros.join(', ') + "<br>Soma: " + soma;
+}
+var numeroInicial = parseInt(prompt("Digite o número inicial:"));
+var numeroFinal = parseInt(prompt("Digite o número final:"));
+var resultado = gerarNumerosEntre(numeroInicial, numeroFinal);
+document.write(resultado);
+
+13 Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número inteiro entre 1 e 10. O usuário deve informar de qual número ele deseja ver a tabuada.
+Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
+Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares.
+Gere a sequência de Fibonacci até o n-ésimo termo.
+Gere a sequência de Fibonacci até que o valor seja maior que 500.
+Calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.
+Determine o menor, o maior e a soma dos valores de um conjunto de N números fornecidos.
+Altere o programa anterior para aceitar apenas números entre 0 e 1000.
+Permita ao usuário calcular o fatorial várias vezes e limite o fatorial a números inteiros positivos menores que 16.
+Determine se um número inteiro é primo.
+Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
+Exiba todos os números primos entre 1 e N.
+Calcule a média aritmética de N notas fornecidas.
+Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
+Simule uma eleição com três candidatos e exiba o número de votos de cada um ao final.
+Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
+Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
+Monte uma tabela de preços de 1 a 50 itens, onde cada item custa R$ 1,99, para uma loja de R$ 1,99.
+Monte uma tabela de preços de pães para uma padaria, onde o preço do pão é informado pelo usuário.
+Implemente uma caixa registradora rudimentar para uma loja de conveniência.
+Informe a menor, a maior e a média das temperaturas de um conjunto indeterminado de valores.
+Verifique se um número é primo (com foco em criptografia).
+Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
+Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
+Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
+Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
+Realize uma estatística de acidentes de trânsito em cinco cidades e analise os resultados.
+Exiba uma tabela de uma dívida com base em juros e número de parcelas.
