@@ -173,31 +173,63 @@ var numeroFinal = parseInt(prompt("Digite o número final:"));
 var resultado = gerarNumerosEntre(numeroInicial, numeroFinal);
 document.write(resultado);
 
-13 Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número inteiro entre 1 e 10. O usuário deve informar de qual número ele deseja ver a tabuada.
-Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
-Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares.
-Gere a sequência de Fibonacci até o n-ésimo termo.
-Gere a sequência de Fibonacci até que o valor seja maior que 500.
-Calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.
-Determine o menor, o maior e a soma dos valores de um conjunto de N números fornecidos.
-Altere o programa anterior para aceitar apenas números entre 0 e 1000.
-Permita ao usuário calcular o fatorial várias vezes e limite o fatorial a números inteiros positivos menores que 16.
-Determine se um número inteiro é primo.
-Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
-Exiba todos os números primos entre 1 e N.
-Calcule a média aritmética de N notas fornecidas.
-Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
-Simule uma eleição com três candidatos e exiba o número de votos de cada um ao final.
-Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
-Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
-Monte uma tabela de preços de 1 a 50 itens, onde cada item custa R$ 1,99, para uma loja de R$ 1,99.
-Monte uma tabela de preços de pães para uma padaria, onde o preço do pão é informado pelo usuário.
-Implemente uma caixa registradora rudimentar para uma loja de conveniência.
-Informe a menor, a maior e a média das temperaturas de um conjunto indeterminado de valores.
-Verifique se um número é primo (com foco em criptografia).
-Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
-Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
-Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
-Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
-Realize uma estatística de acidentes de trânsito em cinco cidades e analise os resultados.
-Exiba uma tabela de uma dívida com base em juros e número de parcelas.
+//13 Desenvolva um gerador de tabuada, capaz de gerar a tabuada de qualquer número inteiro entre 1 e 10. O usuário deve informar de qual número ele deseja ver a tabuada.
+var numero = parseInt(prompt("Digite um número para multiplicar:"));
+if (!isNaN(numero)) {
+  for (let i = 1; i <= 10; i++) {
+       document.write(`${numero} x ${i} = ${numero * i}<br>`);
+  }
+} else {
+  document.write("Por favor, digite um número.");
+}
+14 Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
+var base = parseInt(prompt("Digite a base:"));
+var expoente = parseInt(prompt("Digite o expoente:"));
+var resultado = 1;
+if (expoente >= 0) {
+  for (let i = 0; i < expoente; i++) {
+    resultado *= base;
+  }
+  document.write(`${base} elevado a ${expoente} é igual a ${resultado}`);
+} else {
+  document.write("Expoente inválido. Digite um número inteiro.");
+}
+15 Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares.
+var pares = 0;
+var impares = 0;
+for (let i = 0; i < 10; i++) {
+  var numero = parseInt(prompt("Digite o número " + (i + 1) + ":"));
+  if (numero % 2 === 0) {
+    pares++;
+  } else {
+    impares++;
+  }
+}
+document.write("Quantidade de números pares:", pares);
+dicumenr.write("Quantidade de números ímpares:", impares);
+
+16 Gere a sequência de Fibonacci até o n-ésimo termo.
+17 Gere a sequência de Fibonacci até que o valor seja maior que 500.
+18 Calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.
+19 Determine o menor, o maior e a soma dos valores de um conjunto de N números fornecidos.
+20 Altere o programa anterior para aceitar apenas números entre 0 e 1000.
+21 Permita ao usuário calcular o fatorial várias vezes e limite o fatorial a números inteiros positivos menores que 16.
+22 Determine se um número inteiro é primo.
+23 Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
+24 Exiba todos os números primos entre 1 e N.
+25 Calcule a média aritmética de N notas fornecidas.
+26 Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
+27 Simule uma eleição com três candidatos e exiba o número de votos de cada um ao final.
+28 Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
+29 Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
+30 Monte uma tabela de preços de 1 a 50 itens, onde cada item custa R$ 1,99, para uma loja de R$ 1,99.
+31 Monte uma tabela de preços de pães para uma padaria, onde o preço do pão é informado pelo usuário.
+32 Implemente uma caixa registradora rudimentar para uma loja de conveniência.
+33 Informe a menor, a maior e a média das temperaturas de um conjunto indeterminado de valores.
+34 Verifique se um número é primo (com foco em criptografia).
+35 Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
+36 Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
+37 Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
+38 Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
+39 Realize uma estatística de acidentes de trânsito em cinco cidades e analise os resultados.
+40 Exiba uma tabela de uma dívida com base em juros e número de parcelas.
