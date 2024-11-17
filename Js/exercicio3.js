@@ -466,9 +466,78 @@ if (numero <= 1) {
   }
 }
 
-35 Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
-36 Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
-37 Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
+//35 Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
+
+var limite = parseInt(prompt("Digite o número:"));
+var contadorPrimos = 0;
+document.write("Números primos até", limite + ":");
+for (var numero = 2; numero <= limite; numero++) {
+  var Primo = true;
+  for (var divisor = 2; divisor <= Math.sqrt(numero); divisor++) {
+    if (numero % divisor === 0) {
+      Primo = false;
+      break;
+    }
+  }
+  if (Primo) {
+    document.write(numero);
+    contadorPrimos++;
+  }
+}
+document.write("Total de números primos:", contadorPrimos);
+
+//36 Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
+var numero = parseInt(prompt("Digite o número para a tabuada:"));
+var inicio = parseInt(prompt("Digite o início do intervalo:"));
+var fim = parseInt(prompt("Digite o fim do intervalo:"));
+if (isNaN(numero) || isNaN(inicio) || isNaN(fim)) {
+  document.write("Por favor, insira apenas números.");
+} else if (inicio > fim) {
+  document.write("O início do intervalo deve ser menor que o fim.");
+} else {
+  document.write("Tabuada do", numero, "de", inicio, "até", fim + ":");
+  for (let i = inicio; i <= fim; i++) {
+    document.write(numero, "x", i, "=", numero * i);
+  }
+}
+//37 Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
+var maisAlto = 0;
+var maisBaixo = Infinity;
+var maisPesado = 0;
+var maisMagro = Infinity;
+var somaAlturas = 0;
+var somaPesos = 0;
+var quantidadeClientes = 0;
+while (true) {
+  const altura = parseFloat(prompt("Digite a altura do cliente (em metros) ou 0 para finalizar:"));
+  const peso = parseFloat(prompt("Digite o peso do cliente (em kg):"));
+  if (altura === 0) {
+    break;
+  }
+  if (altura > maisAlto) {
+    maisAlto = altura;
+  }
+  if (altura < maisBaixo) {
+    maisBaixo = altura;
+  }
+  if (peso > maisPesado) {
+    maisPesado = peso;
+  }
+  if (peso < maisMagro) {
+    maisMagro = peso;
+  }
+  somaAlturas += altura;
+  somaPesos += peso;
+  quantidadeClientes++;
+}
+const mediaAlturas = somaAlturas / quantidadeClientes;
+const mediaPesos = somaPesos / quantidadeClientes;
+document.write("O cliente mais alto tem", maisAlto, "metros.");
+document.write("O cliente mais baixo tem", maisBaixo, "metros.");
+document.write("O cliente mais pesado pesa", maisPesado, "kg.");
+document.write("O cliente mais magro pesa", maisMagro, "kg.");
+document.write("A média das alturas é", mediaAlturas.toFixed(2), "metros.");
+document.write("A média dos pesos é", mediaPesos.toFixed(2), "kg.");
 38 Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
 39 Realize uma estatística de acidentes de trânsito em cinco cidades e analise os resultados.
 40 Exiba uma tabela de uma dívida com base em juros e número de parcelas.
