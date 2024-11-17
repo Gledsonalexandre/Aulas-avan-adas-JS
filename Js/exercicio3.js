@@ -256,13 +256,104 @@ for (var i = 0; i < n; i++) {
 document.write(`O menor valor é: ${menor}`);
 document.write(`O maior valor é: ${maior}`);
 document.write(`A soma dos valores é: ${soma}`);
-//20 Altere o programa anterior para aceitar apenas números entre 0 e 1000.
 
+//20 Altere o programa anterior para aceitar apenas números entre 0 e 1000.
+var entrada = prompt("Digite os números entre 0 e 1000, separados por vírgula:");
+var numeros = entrada.split(",").map(Number);
+var menor = 1001; 
+var maior = -1;   
+var soma = 0;
+for (var i = 0; i < numeros.length; i++) {
+  if (numeros[i] >= 0 && numeros[i] <= 1000) {
+    if (numeros[i] < menor) {
+      menor = numeros[i];
+    }
+    if (numeros[i] > maior) {
+      maior = numeros[i];
+    }
+    soma += numeros[i];
+  } else {
+    document.write("Número inválido:", numeros[i]);
+  }
+}
+document.write("Menor valor:", menor);
+document.write("Maior valor:", maior);
+document.write("Soma dos valores:", soma);
 21 Permita ao usuário calcular o fatorial várias vezes e limite o fatorial a números inteiros positivos menores que 16.
-22 Determine se um número inteiro é primo.
-23 Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
-24 Exiba todos os números primos entre 1 e N.
-25 Calcule a média aritmética de N notas fornecidas.
+while (true) {
+  var numero = parseInt(prompt("Digite um número  menor que 16 para calcular o fatorial (ou 0 para sair):"));
+
+  if (numero === 0) {
+    break;
+  }
+
+  if (numero < 0 || numero >= 16) {
+    document.write("Número inválido. Digite um número entre 0 e 15.");
+    continue;
+  }
+  var fatorial = 1;
+  for (var i = 2; i <= numero; i++) {
+    fatorial *= i;
+  }
+  document.write(`O fatorial de ${numero} é ${fatorial}`);
+}
+//22 Determine se um número inteiro é primo.
+var numero = parseInt(prompt("Digite um número:"));
+var divisores = 0;
+for (var i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+        divisores++;
+        break; 
+    }
+}
+if (divisores === 0 && numero > 1) {
+    document.write(numero + " é um número primo.");
+} else {
+    document.write(numero + " não é um número primo.");
+}
+//23 Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
+var numero = parseInt(prompt("Digite um número:"));
+var divisores = 0;
+var divisoresArray = [];
+for (var i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+        divisores++;
+        divisoresArray.push(i);
+        divisoresArray.push(numero / i); 
+    }
+}
+if (divisores === 0 && numero > 1) {
+    document.write(numero + " é um número primo.");
+} else {
+   document.write(numero + " não é um número primo. É divisível por:");
+   document.write(divisoresArray);
+}
+//24 Exiba todos os números primos entre 1 e N.
+var N = parseInt(prompt("Digite um número inteiro:"));
+document.write("Números primos entre 1 e " + N + ":");
+for (var num = 2; num <= N; num++) {
+    var Primo = true;
+    for (var i = 2; i < num; i++) {
+        if (num % i === 0) {
+            Primo = false;
+            break; 
+        }
+    }
+    if (Primo) {
+        document.write(num);
+    }
+}
+//25 Calcule a média aritmética de N notas fornecidas.
+var quantidadeNotas = parseInt(prompt("Digite a quantidade de notas:"));
+var somaNotas = 0;
+var i = 1;
+while (i <= quantidadeNotas) {
+    var nota = parseFloat(prompt("Digite a nota " + i + ":"));
+    somaNotas += nota;
+    i++;
+}
+var media = somaNotas / quantidadeNotas;
+document.write("A média das notas é: " + media.toFixed(2)); 
 //26 Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
 var n = parseInt(prompt("Digite o número de pessoas:"));
 var somaIdades = 0;
