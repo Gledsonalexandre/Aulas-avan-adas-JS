@@ -207,12 +207,57 @@ for (let i = 0; i < 10; i++) {
 }
 document.write("Quantidade de números pares:", pares);
 dicumenr.write("Quantidade de números ímpares:", impares);
+//16 Gere a sequência de Fibonacci até o n-ésimo termo.
+var n = 10;
+var a = 0;
+var b = 1;
+document.write(a);
+document.write(b);
+for (var i = 2; i < n; i++) {
+  var c = a + b;
+  document.write(c);
+  a = b;
+  b = c;
+}
+//17 Gere a sequência de Fibonacci até que o valor seja maior que 500.
+var a = 0;
+var b = 1;
+while (b <= 500) {
+  document.write(b);
+  var c = a + b;
+  a = b;
+  b = c;
+}
+//18 Calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.
+var numero = parseInt(prompt("Digite um número para calcular o fatorial:"));
+var fatorial = 1;
+if (numero >= 0) {
+  for (var i = numero; i > 1; i--) {
+    fatorial *= i;
+  }
+  document.write(`O fatorial de ${numero} é ${fatorial}`);
+} else {
+  document.write("Insira um número inteiro.");}
+//19 Determine o menor, o maior e a soma dos valores de um conjunto de N números fornecidos.
+var n = parseInt(prompt("Digite o número de elementos:"));
+var menor = Infinity; 
+var maior = -Infinity; 
+var soma = 0;
+for (var i = 0; i < n; i++) {
+  const numero = parseInt(prompt(`Digite o número ${i + 1}:`));
+  if (numero < menor) {
+    menor = numero;
+  }
+  if (numero > maior) {
+    maior = numero;
+  }
+  soma += numero;
+}
+document.write(`O menor valor é: ${menor}`);
+document.write(`O maior valor é: ${maior}`);
+document.write(`A soma dos valores é: ${soma}`);
+//20 Altere o programa anterior para aceitar apenas números entre 0 e 1000.
 
-16 Gere a sequência de Fibonacci até o n-ésimo termo.
-17 Gere a sequência de Fibonacci até que o valor seja maior que 500.
-18 Calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.
-19 Determine o menor, o maior e a soma dos valores de um conjunto de N números fornecidos.
-20 Altere o programa anterior para aceitar apenas números entre 0 e 1000.
 21 Permita ao usuário calcular o fatorial várias vezes e limite o fatorial a números inteiros positivos menores que 16.
 22 Determine se um número inteiro é primo.
 23 Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
