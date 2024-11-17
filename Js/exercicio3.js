@@ -372,13 +372,100 @@ if (mediaIdades <= 25) {
     22("A turma é predominantemente idosa.");
 }
 27 Simule uma eleição com três candidatos e exiba o número de votos de cada um ao final.
-28 Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
-29 Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
+var candidatoA = 25;
+var candidatoB = 30;
+var candidatorC = 45;
+var totalVotos = 100;
+for (var i = 0; i < totalVotos; i++) {
+  var voto = Math.floor(Math.random() * 3) + 1;
+  if (voto === 1) {
+    candidatoA++;
+  } else if (voto === 2) {
+    candidatoB++;
+  } else {
+    candidatoC++;
+  }
+}
+document.write("Resultados da votação:");
+document.write("Candidato A:", candidatoA, "votos");
+document.write("Candidato B:", candidatoB, "votos");
+document.write("Candidato C:", candidatoC, "votos");
+//28 Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
+var totalTurmas = 10;
+var totalAlunos = 0;
+for (var i = 1; i <= totalTurmas; i++) {
+  var alunosPorTurma = Math.floor(Math.random() * 40) + 1;
+  totalAlunos += alunosPorTurma;
+}
+var mediaAlunos = totalAlunos / totalTurmas;
+document.write("A média de alunos por turma é:", mediaAlunos.toFixed(2));
+//29 Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
+var quantidadeCDs = 20;
+var valorTotal = 0;
+for (var i = 1; i <= quantidadeCDs; i++) {
+  var precoCD = Math.random() * 30 + 10; 
+  valorTotal += precoCD;
+}
+var valorMedio = valorTotal / quantidadeCDs;
+document.write("Quantidade de CDs comprados:", quantidadeCDs);
+document.write("Valor total investido: R$", valorTotal.toFixed(2));
+document.write("Valor médio por CD: R$", valorMedio.toFixed(2));
+
 30 Monte uma tabela de preços de 1 a 50 itens, onde cada item custa R$ 1,99, para uma loja de R$ 1,99.
 31 Monte uma tabela de preços de pães para uma padaria, onde o preço do pão é informado pelo usuário.
-32 Implemente uma caixa registradora rudimentar para uma loja de conveniência.
-33 Informe a menor, a maior e a média das temperaturas de um conjunto indeterminado de valores.
-34 Verifique se um número é primo (com foco em criptografia).
+//32 Implemente uma caixa registradora rudimentar para uma loja de conveniência.
+  var valorTotal = 0;
+while (true) {
+  var valorProduto = parseFloat(prompt("Digite o valor do produto (ou 0 para finalizar):"));
+  if (valorProduto === 0) {
+    break;
+  }
+  valorTotal += valorProduto;
+}
+document.write("O valor total da compra é:", valorTotal);
+
+//33 Informe a menor, a maior e a média das temperaturas de um conjunto indeterminado de valores.
+var menorTemperatura = Infinity; 
+var maiorTemperatura = -Infinity; 
+var somaTemperaturas = 0;
+var quantidadeTemperaturas = 0;
+while (true) {
+  var temperatura = parseFloat(prompt("Digite a temperatura (ou 0 para finalizar):"));
+  if (temperatura === 0) {
+    break;
+  }
+  if (temperatura < menorTemperatura) {
+    menorTemperatura = temperatura;
+  }
+  if (temperatura > maiorTemperatura) {
+    maiorTemperatura = temperatura;
+  }
+  somaTemperaturas += temperatura;
+  quantidadeTemperaturas++;
+}
+var mediaTemperaturas = somaTemperaturas / quantidadeTemperaturas;
+document.write("A menor temperatura é:", menorTemperatura);
+document.write("A maior temperatura é:", maiorTemperatura);
+document.write("A média das temperaturas é:", mediaTemperaturas);
+//34 Verifique se um número é primo (com foco em criptografia).
+const numero = parseInt(prompt("Digite um número para verificar se é primo:"));
+if (numero <= 1) {
+  document.write("O número não é primo.");
+} else {
+  var Primo = true;
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+      Primo = false;
+      break;
+    }
+  }
+  if (Primo) {
+    document.write("O número é primo.");
+  } else {
+    document.write("O número não é primo.");
+  }
+}
+
 35 Gere uma lista dos números primos entre 1 e um número fornecido pelo usuário.
 36 Gere a tabuada de um número qualquer, com intervalos informados pelo usuário.
 37 Calcule o mais alto, o mais baixo, o mais gordo e o mais magro cliente de uma academia e informe as médias de altura e peso.
