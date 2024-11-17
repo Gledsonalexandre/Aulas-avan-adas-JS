@@ -538,6 +538,16 @@ document.write("O cliente mais pesado pesa", maisPesado, "kg.");
 document.write("O cliente mais magro pesa", maisMagro, "kg.");
 document.write("A média das alturas é", mediaAlturas.toFixed(2), "metros.");
 document.write("A média dos pesos é", mediaPesos.toFixed(2), "kg.");
-38 Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
+//38 Calcule o salário atual de um funcionário contratado em 1995 com aumento anual variável, baseado em seu salário inicial.
+var anoContratacao = 1995;
+const salarioInicial = parseFloat(prompt("Digite o salário inicial do funcionário:"));
+const anoAtual = new Date().getFullYear(); 
+var salarioAtual = salarioInicial;
+for (var ano = anoContratacao + 1; ano <= anoAtual; ano++) {
+  const aumento = parseFloat(prompt(`Digite o percentual de aumento no ano ${ano} (sem o símbolo %):`));
+  const valorAumento = salarioAtual * (aumento / 100);
+  salarioAtual += valorAumento;
+}
+document.write(`O salário atual do funcionário é R$ ${salarioAtual.toFixed(2)}`);
 39 Realize uma estatística de acidentes de trânsito em cinco cidades e analise os resultados.
 40 Exiba uma tabela de uma dívida com base em juros e número de parcelas.
