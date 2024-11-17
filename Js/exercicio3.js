@@ -182,7 +182,7 @@ if (!isNaN(numero)) {
 } else {
   document.write("Por favor, digite um número.");
 }
-14 Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
+//14 Faça um programa que peça dois números, base e expoente, calcule e mostre o primeiro número elevado ao segundo número. Não utilize a função de potência da linguagem.
 var base = parseInt(prompt("Digite a base:"));
 var expoente = parseInt(prompt("Digite o expoente:"));
 var resultado = 1;
@@ -194,7 +194,7 @@ if (expoente >= 0) {
 } else {
   document.write("Expoente inválido. Digite um número inteiro.");
 }
-15 Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares.
+//15 Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números ímpares.
 var pares = 0;
 var impares = 0;
 for (let i = 0; i < 10; i++) {
@@ -218,7 +218,23 @@ dicumenr.write("Quantidade de números ímpares:", impares);
 23 Modifique o programa para indicar, caso o número não seja primo, por quais números ele é divisível.
 24 Exiba todos os números primos entre 1 e N.
 25 Calcule a média aritmética de N notas fornecidas.
-26 Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
+//26 Solicite a idade de N pessoas e determine se a média indica uma turma jovem (0-25), adulta (26-60) ou idosa (acima de 60).
+var n = parseInt(prompt("Digite o número de pessoas:"));
+var somaIdades = 0;
+for (var i = 1; i <= n; i++) {
+    var idade = parseInt(prompt(`Digite a idade da pessoa ${i}:`));
+    somaIdades += idade;
+}
+var mediaIdades = somaIdades / n;
+if (mediaIdades <= 25) {
+    document.write("A turma é predominantemente jovem.");
+} else if (mediaIdades <= 60) {
+    document.write("A turma é predominantemente jovem.");
+    ("A turma é predominantemente adulta.");
+} else {
+    document.write("A turma é predominantemente jovem.");
+    22("A turma é predominantemente idosa.");
+}
 27 Simule uma eleição com três candidatos e exiba o número de votos de cada um ao final.
 28 Calcule o número médio de alunos por turma, considerando que cada turma tem no máximo 40 alunos.
 29 Calcule o valor total investido por um colecionador em CDs e o valor médio gasto em cada um.
